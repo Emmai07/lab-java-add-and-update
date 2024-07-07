@@ -99,5 +99,11 @@ public class Controller {
         return ResponseEntity.ok().body(savedDoctor);
     }
 
+    @PostMapping("patient/add")
+    public ResponseEntity<Patient> addNewPatient(@RequestBody Patient patient) {
+        Patient savedPatient = patientService.addPatient(patient);
+        return ResponseEntity.ok().body(savedPatient);
+    }
+
 }
 
